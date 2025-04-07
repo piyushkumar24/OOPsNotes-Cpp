@@ -204,3 +204,5 @@ Destructor called. Memory freed.
 - **RAII**: A C++ programming idiom where resource allocation is tied to object lifetime
 
 ---
+
+✅ **End of Chapter**
