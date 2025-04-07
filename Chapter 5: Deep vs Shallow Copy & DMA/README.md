@@ -253,3 +253,5 @@ Student s2 = s1;
 | **Pass by Reference** | Passing a variable by address instead of copying it |
 
 ---
+
+✅ **End of Chapter**
