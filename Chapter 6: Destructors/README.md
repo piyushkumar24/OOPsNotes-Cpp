@@ -27,6 +27,9 @@ Use `delete PTR` to deallocate memory
 └────────────────────┘
 ```
 
+- Constructor creates the object (memory allocation)
+- Destructor deletes the object (memory deallocation)
+- Destructor ensures clean-up when object goes out of scope
 ---
 
 ## 📘 Detailed Sections
