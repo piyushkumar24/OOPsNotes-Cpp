@@ -44,7 +44,7 @@ This chapter explores two essential building blocks of object-oriented programmi
 class Teacher {
 public:
     Teacher() {
-        std::cout << "Hi, I am Constructor" << std::endl;
+        cout << "Hi, I am Constructor" << endl;
     }
 };
 
@@ -66,7 +66,7 @@ int main() {
 ```cpp
 class Teacher {
 public:
-    std::string department;
+    string department;
 
     Teacher() {
         department = "Computer Science";
@@ -83,10 +83,10 @@ public:
 ```cpp
 class Teacher {
 public:
-    std::string name, department, subject;
+    string name, department, subject;
     double salary;
 
-    Teacher(std::string n, std::string d, std::string s, double sal) {
+    Teacher(string n, string d, string s, double sal) {
         name = n;
         department = d;
         subject = s;
@@ -106,14 +106,14 @@ public:
 ```cpp
 class Teacher {
 public:
-    std::string name;
+    string name;
 
-    Teacher(std::string n) {
+    Teacher(string n) {
         name = n;
     }
 
     Teacher(const Teacher &original) {
-        std::cout << "Custom copy constructor called" << std::endl;
+        cout << "Custom copy constructor called" << endl;
         name = original.name;
     }
 };
@@ -130,9 +130,9 @@ public:
 ```cpp
 class Teacher {
 public:
-    std::string name;
+    string name;
 
-    Teacher(std::string name) {
+    Teacher(string name) {
         this->name = name;
     }
 };
@@ -152,15 +152,15 @@ this == &t1;
 ```cpp
 class Teacher {
 public:
-    std::string name, subject;
+    string name, subject;
 
-    Teacher(std::string n, std::string s) {
+    Teacher(string n, string s) {
         name = n;
         subject = s;
     }
 
     void displayInfo() {
-        std::cout << "Name: " << name << ", Subject: " << subject << std::endl;
+        cout << "Name: " << name << ", Subject: " << subject << endl;
     }
 };
 
@@ -177,9 +177,9 @@ int main() {
 ```cpp
 class Teacher {
 public:
-    std::string name;
+    string name;
 
-    Teacher(std::string n) {
+    Teacher(string n) {
         name = n;
     }
 
@@ -250,4 +250,4 @@ int main() {
 
 ---
 
-➡️ **Next Chapter: Deep Copy vs Shallow Copy in C++**
+✅ **End of Chapter**
