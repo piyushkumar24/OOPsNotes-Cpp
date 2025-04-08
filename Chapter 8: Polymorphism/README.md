@@ -46,7 +46,7 @@ Polymorphism   Polymorphism
   - *Poly* = many  
   - *Morph* = forms  
 - It is the ability of an object to take many forms depending on the context.
-- Encourages **code reuse** and **scalability**.
+- Encourages **code reuse**, **extensibility**, and **maintainability**.
 
 ---
 
@@ -130,7 +130,7 @@ Decisions made during **runtime**, typically via **inheritance** and **virtual f
 
 #### 3.1 🧬 Function Overriding
 
-Child class redefines a parent function with the **same signature**:
+Function overriding occurs when a **derived class** provides its own implementation of a function already defined in its **base class**, with the **same signature**.
 
 ```cpp
 class Parent {
@@ -155,6 +155,51 @@ Child c;
 c.show();  // Outputs: Child class
 ```
 
+However, this only works **statically**. To enable **dynamic (runtime) dispatch**, we must use `virtual`.
+
+---
+
+### 3.2 🧲 Virtual Functions – Key to Run-Time Polymorphism
+
+When a base class function is marked `virtual`, C++ uses a **VTable** to resolve which function to call at runtime, depending on the actual object type—not the pointer/reference type.
+
+```cpp
+class Parent {
+public:
+    virtual void show() {
+        cout << "Parent class\n";
+    }
+};
+
+class Child : public Parent {
+public:
+    void show() override {
+        cout << "Child class\n";
+    }
+};
+```
+
+**Usage with pointer:**
+
+```cpp
+Parent* ptr;
+Child c;
+ptr = &c;
+ptr->show();  // Outputs: Child class
+```
+
+Without `virtual`, this would output `Parent class`, even if `ptr` is pointing to a `Child` object.
+
+---
+
+#### 📝 Notes on Virtual Functions
+
+- Declared in base class using the `virtual` keyword.
+- Can be **overridden** in derived class.
+- **Must have the same signature** to override correctly.
+- Often used via **base class pointers or references**.
+- Destructors should be `virtual` if a class is used polymorphically.
+
 ---
 
 ### 🧪 Practical Examples
@@ -174,27 +219,25 @@ p.show(100);              // Integer
 p.show('A');              // Character
 ```
 
-#### 🧬 Run-Time Polymorphism
+#### 🧬 Run-Time Polymorphism with Virtual
 
 ```cpp
 class Parent {
 public:
-    virtual void show() {
-        cout << "Parent class\n";
+    virtual void speak() {
+        cout << "Speaking from Parent\n";
     }
 };
 
 class Child : public Parent {
 public:
-    void show() override {
-        cout << "Child class\n";
+    void speak() override {
+        cout << "Speaking from Child\n";
     }
 };
 
-Parent* ptr;
-Child c;
-ptr = &c;
-ptr->show();  // Outputs: Child class
+Parent* obj = new Child();
+obj->speak();  // Outputs: Speaking from Child
 ```
 
 ---
@@ -207,38 +250,41 @@ ptr->show();  // Outputs: Child class
 - What is function overloading?
 - How is operator overloading used in C++?
 - What is function overriding, and how is it implemented?
-- Why is inheritance required for method overriding?
-- Can you override constructors in C++? Why or why not?
+- What are virtual functions and why are they important?
+- Why must destructors be virtual in polymorphic classes?
+- Can constructors be overridden in C++?
 
 ---
 
 ## 🚫 Common Mistakes or Misunderstandings
 
 - ❌ Confusing **overloading** with **overriding**.
-- ❌ Forgetting to use the `virtual` keyword for run-time polymorphism.
-- ❌ Believing return type alone can distinguish overloaded functions (it can't).
-- ❌ Thinking operator overloading changes operator precedence (it doesn’t).
-- ❌ Not initializing data members properly in overloaded constructors.
+- ❌ Forgetting to use the `virtual` keyword for runtime polymorphism.
+- ❌ Believing return type alone distinguishes overloaded functions (it can’t).
+- ❌ Expecting base class pointer to call child method without `virtual`.
+- ❌ Not declaring destructors as `virtual` in base class when needed.
 
 ---
 
 ## 🧰 Tooling & IDE Integration
 
 - **Visual Studio / CLion / Code::Blocks**
-  - IntelliSense / Auto-completion helps detect overloads and overrides.
-  - Refactoring tools show function overloads and inherited methods.
-  - Run-time debuggers can step into overridden functions.
-  - Shows virtual function hierarchies and highlights overridden methods.
+  - IntelliSense highlights overridden functions.
+  - Shows virtual function hierarchies.
+  - Auto-completion assists with overloads.
+  - Debugger allows stepping into virtual function calls.
+  - Refactoring tools help rename across overloads.
 
 ---
 
 ## 🎓 Advanced Notes / Behind the Scenes
 
 - C++ uses **VTables (Virtual Tables)** to implement **runtime polymorphism**.
-- **Name mangling** is used by the compiler to distinguish overloaded functions.
-- Function overloading doesn’t support **default arguments** if ambiguity arises.
-- Operator overloading uses the `operator` keyword and can be user-defined.
-- Constructors cannot be overridden because they are not inherited.
+- A **vtable pointer (vptr)** is placed in polymorphic objects by the compiler.
+- **Name mangling** distinguishes overloaded functions internally.
+- Function overloading doesn’t support default arguments that introduce ambiguity.
+- **Constructors cannot be overridden**—they are not inherited.
+- You can mark virtual functions as `final` to prevent further overriding.
 
 ---
 
@@ -247,10 +293,11 @@ ptr->show();  // Outputs: Child class
 - **Polymorphism** – The ability of an object to take on many forms.
 - **Compile-Time Polymorphism** – Resolved during compilation; includes overloading.
 - **Run-Time Polymorphism** – Resolved at runtime; includes overriding.
-- **VTable** – A mechanism used to support dynamic dispatch of functions.
-- **Virtual Function** – A function declared in the base class that can be overridden in derived class.
-- **Overloading** – Same function/operator with different parameters.
-- **Overriding** – Redefining base class function in derived class with the same signature.
+- **Overloading** – Same name, different parameters (function/operator).
+- **Overriding** – Redefining base class method in derived class with the same signature.
+- **Virtual Function** – Enables runtime dispatch through base class pointers.
+- **VTable** – Lookup table used to resolve virtual function calls.
+- **vptr** – Pointer to the vtable inside a polymorphic object.
 
 ---
 
