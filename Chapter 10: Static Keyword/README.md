@@ -255,7 +255,6 @@ All objects share the same `x`.
 
 ---
 
-✅ **Next Chapter Preview**: [Friend Function & Friend Class (Optional Homework)]  
-📌 This topic is advanced and not commonly asked in interviews, but great for deep learning.
+✅ **End of Chapter**
 
 ---
