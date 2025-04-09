@@ -170,4 +170,32 @@ class A {
 
 ---
 
+## 📚 Glossary
 
+| Term                  | Definition |
+|-----------------------|------------|
+| **Class**             | User-defined blueprint from which objects are created. |
+| **Object**            | Instance of a class. Has its own data and behavior. |
+| **Encapsulation**     | Binding of data and functions into a single unit (class). |
+| **Abstraction**       | Hiding internal complexity, exposing only essentials. |
+| **Inheritance**       | Mechanism to acquire properties of another class. |
+| **Polymorphism**      | One interface, multiple implementations. |
+| **Constructor**       | Special method automatically called during object creation. |
+| **Destructor**        | Special method automatically called during object destruction. |
+| **Static Variable**   | Variable shared across all instances of a class. |
+| **Static Function**   | Function that does not depend on object state. |
+| **Friend Function**   | Function that can access private members of a class. |
+| **Friend Class**      | A class that can access private members of another class. |
+| **Virtual Function**  | Function that supports runtime polymorphism (overridden in derived classes). |
+| **Pure Virtual Function** | Function with `= 0`, making the class abstract. |
+| **Abstract Class**    | Class with at least one pure virtual function. Cannot be instantiated. |
+| **Overloading**       | Same function name, different parameters. |
+| **Overriding**        | Redefining base class function in derived class. |
+| **Access Specifiers** | Keywords `public`, `private`, `protected` to control visibility. |
+| **this Pointer**      | Pointer that holds the address of the invoking object. |
+
+---
+
+✅ **End**
+
+---
