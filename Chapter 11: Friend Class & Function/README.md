@@ -266,3 +266,7 @@ int main() {
 Friend functions and friend classes are powerful C++ features that allow for special access to class internals. They provide flexibility in certain scenarios such as operator overloading and inter-class communication. However, due to their ability to bypass encapsulation, they should be used carefully and sparingly to avoid tightly coupled code.
 
 ---
+
+✅ **End of Chapter**
+
+---
