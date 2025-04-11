@@ -1,4 +1,4 @@
-# 🧠 OOPs Notes in C++ (Crafted with ❤️ by `piyushkumar24`)
+# OOPs Notes in C++ (Crafted with ❤️ by `piyushkumar24`)
 
 A beginner-friendly, structured, and concept-first guide to understanding Object-Oriented Programming (OOP) using C++. These notes are tailored for students, interview prep, and self-learners trying to build solid OOP fundamentals.
 
