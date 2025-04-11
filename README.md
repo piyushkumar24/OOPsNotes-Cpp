@@ -10,7 +10,7 @@ A beginner-friendly, structured, and concept-first guide to understanding Object
 
 | Chapter | Title                                               | Summary                                                      |
 |--------:|-----------------------------------------------------|--------------------------------------------------------------|
-|   01    | [Intro to OOP](./Chapter-01-Introduction/README.md)                         | What is OOP? Why OOP? Real-world analogies                   |
+|   01    | [Intro to OOP](https://github.com/piyushkumar24/OOPsNotes-Cpp/blob/main/Chapter%2001%3A%20Introduction%20to%20OOP's%20in%20C%2B%2B/README.md)                         | What is OOP? Why OOP? Real-world analogies                   |
 |   02    | [Class, Object & Access Specifiers](./Chapter-02-Class-Obj/README.md)       | Understanding blueprint vs instance & visibility control     |
 |   03    | [Pillars & Encapsulation](./Chapter-03-Pillars-Encapsulation/README.md)     | Encapsulation & a glance at the 4 OOP pillars                |
 |   04    | [Constructors & `this` Pointer](./Chapter-04-Constructors/README.md)         | Object initialization + deep dive into the `this` pointer    |
